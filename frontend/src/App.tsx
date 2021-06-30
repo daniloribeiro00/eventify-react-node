@@ -1,13 +1,14 @@
 import React from 'react';
-import Dashboard from './pages/Dashboard'
-import GlobalStyle from './styles/global'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-const App: React.FC = () => (
-  <>
-    <Dashboard />
-    <GlobalStyle />
-  </>
-)
+import { Home } from './pages/Home';
+import { Total } from './pages/Total';
 
-export default App;
-
+export const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path='/' exact component={Home} />
+      <Route path='/total' exact component={Total} />
+    </Switch>
+  </BrowserRouter>
+);
